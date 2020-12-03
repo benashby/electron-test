@@ -12,6 +12,10 @@ function createWindow () {
     win.loadURL('http://localhost:9080')
 }
 
+app.commandLine.appendSwitch('ignore-certificate-errors', 'true');
+app.commandLine.appendSwitch('allow-insecure-localhost', 'true');
+app.commandLine.appendSwitch('disable-features', 'OutOfBlinkCors');
+
 app.whenReady().then(createWindow)
 
 app.on('window-all-closed', () => {
